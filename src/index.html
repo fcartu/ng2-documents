@@ -5,24 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Angular 2 - Documents - Example App</title>
+
+    <link rel="stylesheet" href="./main.css">
+
     <base href="/">
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Ng2-Documents</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Help</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container">
+      <div class="starter-template">
         <ng2-docs>
           Loading...
         </ng2-docs>
