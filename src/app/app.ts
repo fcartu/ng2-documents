@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { QualityComponent } from './quality/quality.component';
 
 require('!!style!css!bootstrap/dist/css/bootstrap.css');
 
@@ -10,7 +11,7 @@ require('!!style!css!bootstrap/dist/css/bootstrap.css');
   pipes: [],
   providers: [],
   directives: [ ROUTER_DIRECTIVES ],
-  precompile: [HomeComponent],
+  precompile: [HomeComponent, QualityComponent],
   templateUrl: './app.html',
 })
 export class App {

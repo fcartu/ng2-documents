@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Ng2-Documents</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/']">Home</a></li>
+            <li><a [routerLink]="['/quality']">Quality</a>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="starter-template">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
