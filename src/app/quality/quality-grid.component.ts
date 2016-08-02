@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 
 @Component({
   selector: 'qa-grid',
@@ -8,8 +14,14 @@ export class QualityGridComponent implements OnInit {
 
   @Input() resultDocs: Document[];
 
+  @Output() selectDocument: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() { }
+
+  contentPreview(docId: string) {
+    this.selectDocument.emit(docId);
+  }
 
 }

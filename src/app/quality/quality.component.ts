@@ -16,8 +16,14 @@ export class QualityComponent implements OnInit {
     { Id: "3", AttributeName: "Attr3", Value: "Value3", RuleSummary: "Rule3"}
   ];
 
+  id: string;
+
   constructor() { }
 
   ngOnInit() {}
+
+  onSelectDoc(value: any) {
+    this.id = value;
+  }
 
 }

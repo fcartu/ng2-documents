@@ -3,5 +3,7 @@
 </div>
 
 <div class="panel panel-default">
-  <qa-grid [resultDocs]="documents"></qa-grid>
+  <qa-grid [resultDocs]="documents" (selectDocument)="onSelectDoc($event)"></qa-grid>
 </div>
+
+<input type="text" [(ngModel)]="id">
