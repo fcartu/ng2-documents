@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-export class Document {
-  Id: string;
-  AttributeName: string;
-  Value: string;
-  RuleSummary: string;
-}
+import { Document } from './document.ts';
 
 @Component({
   selector: 'quality',
