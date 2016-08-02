@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Document } from './document.ts';
+import { Document } from './document';
+import { QualityGridComponent } from './quality-grid.component';
 
 @Component({
   selector: 'quality',
+  directives: [QualityGridComponent],
   templateUrl: 'quality.component.html'
 })
 export class QualityComponent implements OnInit {
