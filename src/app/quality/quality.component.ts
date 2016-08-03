@@ -4,6 +4,12 @@ import { Document } from './document';
 import { QualityGridComponent } from './quality-grid.component';
 import { QualityDetailsComponent } from './quality-details.component';
 
+var mockDocuments = [
+  { documentId: "1", documentContent: "Lorem Ipsum is simply dummy"},
+  { documentId: "2", documentContent: "It is a long established"},
+  { documentId: "3", documentContent: "There are many variations of passages"}
+];
+
 @Component({
   selector: 'quality',
   directives: [
@@ -21,6 +27,7 @@ export class QualityComponent implements OnInit {
   ];
 
   selectedDocId: string;
+  selectedDocumentContent: string;
 
   constructor() { }
 
@@ -28,6 +35,9 @@ export class QualityComponent implements OnInit {
 
   onSelectDoc(value: any) {
     this.selectedDocId = value;
+
+    let doc = mockDocuments.filter(item => item.documentId === this.selectedDocId)[0];
+    this.selectedDocumentContent = doc.documentContent;
   }
 
 }

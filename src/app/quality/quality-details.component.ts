@@ -13,6 +13,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class QualityDetailsComponent implements OnInit {
 
   @Input() selectedDocumentId: string;
+  @Input() documentContent: string;
 
   constructor() { }
 
