@@ -6,4 +6,6 @@
   <qa-grid [resultDocs]="documents" (selectDocument)="onSelectDoc($event)"></qa-grid>
 </div>
 
-<input type="text" [(ngModel)]="id">
+<div class="panel panel-default">
+  <qa-details [selectedDocumentId]="selectedDocId"></qa-details>
+</div>

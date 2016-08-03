@@ -2,10 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 import { Document } from './document';
 import { QualityGridComponent } from './quality-grid.component';
+import { QualityDetailsComponent } from './quality-details.component';
 
 @Component({
   selector: 'quality',
-  directives: [QualityGridComponent],
+  directives: [
+    QualityGridComponent,
+    QualityDetailsComponent
+  ],
   templateUrl: 'quality.component.html'
 })
 export class QualityComponent implements OnInit {
@@ -16,14 +20,14 @@ export class QualityComponent implements OnInit {
     { Id: "3", AttributeName: "Attr3", Value: "Value3", RuleSummary: "Rule3"}
   ];
 
-  id: string;
+  selectedDocId: string;
 
   constructor() { }
 
   ngOnInit() {}
 
   onSelectDoc(value: any) {
-    this.id = value;
+    this.selectedDocId = value;
   }
 
 }
