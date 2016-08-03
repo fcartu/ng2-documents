@@ -8,6 +8,11 @@ import {
 
 @Component({
   selector: 'qa-grid',
+  styles: [`
+    .selected {
+      background-color: #ECECEC;
+    }
+  `],
   templateUrl: 'quality-grid.component.html'
 })
 export class QualityGridComponent implements OnInit {
@@ -16,11 +21,14 @@ export class QualityGridComponent implements OnInit {
 
   @Output() selectDocument: EventEmitter<any> = new EventEmitter();
 
+  selectedDocId: string;
+
   constructor() { }
 
   ngOnInit() { }
 
   contentPreview(docId: string) {
+    this.selectedDocId = docId;
     this.selectDocument.emit(docId);
   }
 

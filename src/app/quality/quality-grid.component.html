@@ -9,12 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let doc of resultDocs">
+    <tr *ngFor="let doc of resultDocs" [ngClass]="{selected: doc.Id === selectedDocId}">
       <td>{{ doc.Id }}</td>
       <td>{{ doc.AttributeName }}</td>
       <td>{{ doc.Value }}</td>
       <td>{{ doc.RuleSummary }}</td>
-      <td>
+      <td >
         <button type="button" class="btn btn-primary btn-xs" (click)="contentPreview(doc.Id)">
           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
         </button>
