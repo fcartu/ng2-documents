@@ -14,7 +14,5 @@ require('!!style!css!bootstrap/dist/css/bootstrap.css');
   precompile: [HomeComponent, QualityComponent],
   templateUrl: './app.html',
 })
-export class App {
-  constructor() {}
-
+export class AppComponent {
 }
