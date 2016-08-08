@@ -5,11 +5,11 @@ import { provideForms, disableDeprecatedForms } from '@angular/forms';
 // import {enableProdMode} from '@angular/core';
 
 import {APP_ROUTER_PROVIDERS} from './app/app.routes';
-import {App} from './app/app';
+import {AppComponent} from './app/app';
 
 // enableProdMode()
 
-bootstrap(App, [
+bootstrap(AppComponent, [
   HTTP_PROVIDERS,
   APP_ROUTER_PROVIDERS,
   provideForms(),
