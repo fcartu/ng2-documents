@@ -1,6 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+*.ts text eol=lf
+
 # image files are treated as binary by default.
 *.jpg binary
 *.png binary
