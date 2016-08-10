@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { QualityComponent } from './quality/quality.component';
+import { QualityComponent } from './quality';
 
 require('!!style!css!bootstrap/dist/css/bootstrap.css');
 

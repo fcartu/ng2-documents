@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Document, QualityService } from './shared';
-import { QualityGridComponent } from './quality-grid.component';
-import { QualityDetailsComponent } from './quality-details.component';
+import { QualityGridComponent } from './quality-grid';
+import { QualityDetailsComponent } from './quality-details';
 
 @Component({
   selector: 'quality-container',
