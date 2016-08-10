@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'qa-details',
@@ -10,13 +10,9 @@ import { Component, OnInit, Input } from '@angular/core';
   `],
   templateUrl: 'quality-details.component.html'
 })
-export class QualityDetailsComponent implements OnInit {
+export class QualityDetailsComponent {
 
   @Input() selectedDocumentId: string;
   @Input() documentContent: string;
-
-  constructor() { }
-
-  ngOnInit() { }
 
 }

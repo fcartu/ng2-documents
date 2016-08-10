@@ -5,7 +5,7 @@ import { QualityGridComponent } from './quality-grid.component';
 import { QualityDetailsComponent } from './quality-details.component';
 
 @Component({
-  selector: 'quality',
+  selector: 'quality-container',
   directives: [
     QualityGridComponent,
     QualityDetailsComponent
