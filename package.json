@@ -2,6 +2,7 @@
   "name": "ng2-documents",
   "version": "1.0.0",
   "scripts": {
+    "api": "json-server --watch ./src/app/mocks/data.json --port 3004",
     "typings-install": "typings install",
     "postinstall": "npm run typings-install",
     "build": "webpack --inline --colors --progress --display-error-details --display-cached",
