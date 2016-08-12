@@ -1,27 +1,40 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 
 import { Document } from './document';
+
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class QualityService {
 
-  private documents: Document[] = [
-    { Id: '1', AttributeName: 'Attr1', Value: 'Value1', RuleSummary: 'Rule1'},
-    { Id: '2', AttributeName: 'Attr2', Value: 'Value2', RuleSummary: 'Rule2'},
-    { Id: '3', AttributeName: 'Attr3', Value: 'Value3', RuleSummary: 'Rule3'}
-  ];
+  private API_URL: string = 'http://localhost:3004';
 
-  private mockDocuments = [
-    { documentId: '1', documentContent: 'Lorem Ipsum is simply dummy'},
-    { documentId: '2', documentContent: 'It is a long established'},
-    { documentId: '3', documentContent: 'There are many variations of passages'}
-  ];
+  constructor(private http: Http) {}
 
-  getDocuments(): Document[] {
-    return this.documents;
+  getDocuments(): Observable<Document[]> {
+    return this.http.get(this.API_URL + '/documents')
+              .map(this.handleData)
+              .catch(this.handleError);
   }
 
-  getMockDocuments(): any {
-    return this.mockDocuments;
+  private handleData(res: Response) {
+    return (<any>res.json())
+          .map(item => {
+            return new Document({
+              id: item.id,
+              attrName: item.attribute_name,
+              value: item.value,
+              ruleSummary: item.rule_summary,
+              content: item.content
+            });
+          });
+  }
+
+  private handleError(error: any) {
+    let errMsg = (error.message) ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+
+    return Observable.throw(errMsg);
   }
 }

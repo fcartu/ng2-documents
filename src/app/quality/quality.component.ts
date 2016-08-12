@@ -25,16 +25,17 @@ export class QualityComponent implements OnInit {
   constructor(private qaService: QualityService) {}
 
   ngOnInit() {
-    this.documents = this.qaService.getDocuments();
-
-    this.mockDocuments = this.qaService.getMockDocuments();
+    this.qaService
+        .getDocuments()
+        .subscribe(res => this.documents = res);
   }
 
   onSelectDoc(value: any) {
     this.selectedDocId = value;
 
-    let doc = this.mockDocuments.filter(item => item.documentId === this.selectedDocId)[0];
-    this.selectedDocumentContent = doc.documentContent;
+    let doc = this.documents.filter(item => item.Id === this.selectedDocId)[0];
+
+    this.selectedDocumentContent = doc.Content;
   }
 
 }

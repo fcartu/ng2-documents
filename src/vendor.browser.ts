@@ -9,4 +9,5 @@ import '@angular/router';
 
 
 // RxJS 5
-// import 'rxjs/Rx';
+//import 'rxjs';
+import './app/rxjs-operators';
