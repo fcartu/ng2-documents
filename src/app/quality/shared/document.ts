@@ -7,7 +7,7 @@ export class Document {
 
 constructor(obj?: any) {
     this.Id = obj && obj.id || null;
-    this.AttributeName = obj && obj.attributeName || null;
+    this.AttributeName = obj && obj.attrName || null;
     this.Value = obj && obj.value || null;
     this.RuleSummary = obj && obj.ruleSummary || null;
     this.Content = obj && obj.content || null;
