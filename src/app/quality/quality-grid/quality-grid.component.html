@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let doc of resultDocs" [ngClass]="{selected: doc.Id === selectedDocId}">
+    <tr *ngFor="let doc of documents" [ngClass]="{selected: doc.Id === selectedDocId}">
       <td>{{ doc.Id }}</td>
       <td>{{ doc.AttributeName }}</td>
       <td>{{ doc.Value }}</td>

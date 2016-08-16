@@ -2,8 +2,11 @@ import {
   Component,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
+  OnInit
 } from '@angular/core';
+
+import { Document, QualityService } from '../shared';
 
 @Component({
   selector: 'qa-grid',
@@ -12,19 +15,29 @@ import {
       background-color: #ECECEC;
     }
   `],
+  providers: [QualityService],
   templateUrl: 'quality-grid.component.html'
 })
-export class QualityGridComponent {
+export class QualityGridComponent implements OnInit {
 
-  @Input() resultDocs: Document[];
+  documents: Document[];
 
   @Output() selectDocument: EventEmitter<any> = new EventEmitter();
 
-  selectedDocId: string;
+  constructor(private qaService: QualityService) {}
+
+  ngOnInit() {
+    this.qaService
+        .getDocuments()
+        .subscribe(res => this.documents = res);
+  }
 
   contentPreview(docId: string) {
-    this.selectedDocId = docId;
-    this.selectDocument.emit(docId);
+    let selectedDoc: Document =
+      this.documents.filter(item => item.Id === docId)[0];
+
+    if (selectedDoc)
+      this.selectDocument.emit(selectedDoc.Content);
   }
 
 }
