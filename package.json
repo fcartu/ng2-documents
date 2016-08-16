@@ -1,6 +1,7 @@
 {
   "name": "ng2-documents",
   "version": "1.0.0",
+  "description": "An Angular 2 example (Bootstrap, ng2-boostrap, webpack)",
   "scripts": {
     "api": "json-server --watch ./src/app/mocks/data.json --port 3004",
     "typings-install": "typings install",
@@ -48,5 +49,9 @@
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
     "webpack-merge": "^0.8.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fcartu/ng2-documents.git"
   }
 }
